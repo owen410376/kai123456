@@ -1,0 +1,143 @@
+<html>
+<head>
+<title>location.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #e8bf6a;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #bababa;}
+.s3 { color: #a5c261;}
+.s4 { color: #cc7832;}
+.s5 { color: #6897bb;}
+.s6 { color: #6a8759;}
+.s7 { color: #808080;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+location.html</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;!DOCTYPE </span><span class="s2">html</span><span class="s0">&gt;</span>
+<span class="s0">&lt;html </span><span class="s2">lang</span><span class="s3">=&quot;en&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;head&gt;</span>
+  <span class="s0">&lt;meta </span><span class="s2">charset</span><span class="s3">=&quot;UTF-8&quot;</span><span class="s0">&gt;</span>
+  <span class="s0">&lt;title&gt;</span><span class="s1">Loading</span><span class="s0">&lt;/title&gt;</span>
+  <span class="s0">&lt;style&gt;</span>
+    <span class="s0">body </span><span class="s1">{</span>
+      <span class="s2">overflow</span><span class="s1">: </span><span class="s3">hidden</span><span class="s4">;</span>
+    <span class="s1">}</span>
+    <span class="s1">.</span><span class="s0">background-overlay </span><span class="s1">{</span>
+      <span class="s2">position</span><span class="s1">: </span><span class="s3">fixed</span><span class="s4">;</span>
+      <span class="s2">top</span><span class="s1">: </span><span class="s5">0</span><span class="s4">;</span>
+      <span class="s2">left</span><span class="s1">: </span><span class="s5">0</span><span class="s4">;</span>
+      <span class="s2">width</span><span class="s1">: </span><span class="s5">100</span><span class="s1">%</span><span class="s4">;</span>
+      <span class="s2">height</span><span class="s1">: </span><span class="s5">100</span><span class="s1">%</span><span class="s4">;</span>
+      <span class="s2">z-index</span><span class="s1">: -</span><span class="s5">1</span><span class="s4">;</span>
+      <span class="s2">opacity</span><span class="s1">: </span><span class="s5">0.8</span><span class="s4">;</span>
+      <span class="s2">background-color</span><span class="s1">: </span><span class="s3">black</span><span class="s4">;</span>
+      <span class="s2">animation</span><span class="s1">: </span><span class="s0">backgroundAnimation </span><span class="s5">10</span><span class="s3">s linear infinite</span><span class="s4">;</span>
+    <span class="s1">}</span>
+    <span class="s1">.</span><span class="s0">loading-overlay </span><span class="s1">{</span>
+      <span class="s2">display</span><span class="s1">: </span><span class="s3">none</span><span class="s4">;</span>
+      <span class="s2">flex-direction</span><span class="s1">: </span><span class="s3">column</span><span class="s4">;</span>
+      <span class="s2">align-items</span><span class="s1">: </span><span class="s3">center</span><span class="s4">;</span>
+      <span class="s2">z-index</span><span class="s1">: </span><span class="s5">9999</span><span class="s4">;</span>
+    <span class="s1">}</span>
+    <span class="s1">.</span><span class="s0">loading-spinner </span><span class="s1">{</span>
+      <span class="s2">border</span><span class="s1">: </span><span class="s5">16</span><span class="s3">px solid </span><span class="s5">#f3f3f3</span><span class="s4">;</span>
+      <span class="s2">border-top</span><span class="s1">: </span><span class="s5">16</span><span class="s3">px solid </span><span class="s5">#3498db</span><span class="s4">;</span>
+      <span class="s2">border-radius</span><span class="s1">: </span><span class="s5">50</span><span class="s1">%</span><span class="s4">;</span>
+      <span class="s2">width</span><span class="s1">: </span><span class="s5">120</span><span class="s3">px</span><span class="s4">;</span>
+      <span class="s2">height</span><span class="s1">: </span><span class="s5">120</span><span class="s3">px</span><span class="s4">;</span>
+      <span class="s2">animation</span><span class="s1">: </span><span class="s0">spin </span><span class="s5">2</span><span class="s3">s linear infinite</span><span class="s4">;</span>
+      <span class="s2">margin-bottom</span><span class="s1">: </span><span class="s5">16</span><span class="s3">px</span><span class="s4">;</span>
+    <span class="s1">}</span>
+    <span class="s1">.</span><span class="s0">loading-text </span><span class="s1">{</span>
+      <span class="s2">color</span><span class="s1">: </span><span class="s3">white</span><span class="s4">;</span>
+      <span class="s2">font-size</span><span class="s1">: </span><span class="s5">24</span><span class="s3">px</span><span class="s4">;</span>
+      <span class="s2">animation</span><span class="s1">: </span><span class="s3">blink </span><span class="s5">1</span><span class="s3">s linear infinite</span><span class="s4">;</span>
+    <span class="s1">}</span>
+    <span class="s1">.</span><span class="s0">play-button </span><span class="s1">{</span>
+      <span class="s2">padding</span><span class="s1">: </span><span class="s5">10</span><span class="s3">px </span><span class="s5">20</span><span class="s3">px</span><span class="s4">;</span>
+      <span class="s2">background-color</span><span class="s1">: </span><span class="s5">#3498db</span><span class="s4">;</span>
+      <span class="s2">color</span><span class="s1">: </span><span class="s3">white</span><span class="s4">;</span>
+      <span class="s2">font-size</span><span class="s1">: </span><span class="s5">18</span><span class="s3">px</span><span class="s4">;</span>
+      <span class="s2">border</span><span class="s1">: </span><span class="s3">none</span><span class="s4">;</span>
+      <span class="s2">cursor</span><span class="s1">: </span><span class="s3">pointer</span><span class="s4">;</span>
+      <span class="s2">outline</span><span class="s1">: </span><span class="s3">none</span><span class="s4">;</span>
+      <span class="s2">transition</span><span class="s1">: </span><span class="s3">background-color </span><span class="s5">0.3</span><span class="s3">s</span><span class="s4">;</span>
+    <span class="s1">}</span>
+    <span class="s1">.</span><span class="s0">play-button</span><span class="s1">:</span><span class="s0">hover </span><span class="s1">{</span>
+      <span class="s2">background-color</span><span class="s1">: </span><span class="s5">#2980b9</span><span class="s4">;</span>
+      <span class="s2">transform</span><span class="s1">: </span><span class="s0">scale</span><span class="s1">(</span><span class="s5">1.1</span><span class="s1">)</span><span class="s4">;</span>
+    <span class="s1">}</span>
+    <span class="s1">.</span><span class="s0">play-button</span><span class="s1">.</span><span class="s0">clicked </span><span class="s1">{</span>
+      <span class="s2">animation</span><span class="s1">: </span><span class="s0">buttonClick </span><span class="s5">0.3</span><span class="s3">s ease-in-out</span><span class="s4">;</span>
+    <span class="s1">}</span>
+    <span class="s1">.</span><span class="s0">loading-text </span><span class="s1">{</span>
+      <span class="s2">color</span><span class="s1">: </span><span class="s3">white</span><span class="s4">;</span>
+      <span class="s2">font-size</span><span class="s1">: </span><span class="s5">24</span><span class="s3">px</span><span class="s4">;</span>
+    <span class="s1">}</span>
+    <span class="s4">@keyframes </span><span class="s0">spin </span><span class="s1">{</span>
+      <span class="s0">0% </span><span class="s1">{ </span><span class="s2">transform</span><span class="s1">: </span><span class="s0">rotate</span><span class="s1">(</span><span class="s5">0</span><span class="s3">deg</span><span class="s1">)</span><span class="s4">; </span><span class="s1">}</span>
+      <span class="s0">100% </span><span class="s1">{ </span><span class="s2">transform</span><span class="s1">: </span><span class="s0">rotate</span><span class="s1">(</span><span class="s5">360</span><span class="s3">deg</span><span class="s1">)</span><span class="s4">; </span><span class="s1">}</span>
+    <span class="s1">}</span>
+    <span class="s4">@keyframes </span><span class="s0">blink </span><span class="s1">{</span>
+      <span class="s0">0% </span><span class="s1">{ </span><span class="s2">color</span><span class="s1">: </span><span class="s3">white</span><span class="s4">; </span><span class="s1">}</span>
+      <span class="s0">50% </span><span class="s1">{ </span><span class="s2">color</span><span class="s1">: </span><span class="s3">yellow</span><span class="s4">; </span><span class="s1">}</span>
+      <span class="s0">100% </span><span class="s1">{ </span><span class="s2">color</span><span class="s1">: </span><span class="s3">white</span><span class="s4">; </span><span class="s1">}</span>
+    <span class="s1">}</span>
+    <span class="s4">@keyframes </span><span class="s0">backgroundAnimation </span><span class="s1">{</span>
+      <span class="s0">0%</span><span class="s4">, </span><span class="s0">100% </span><span class="s1">{ </span><span class="s2">background-image</span><span class="s1">: </span><span class="s0">url</span><span class="s1">(</span><span class="s6">&quot;image2.jpg&quot;</span><span class="s1">)</span><span class="s4">; </span><span class="s1">}</span>
+      <span class="s0">25% </span><span class="s1">{ </span><span class="s2">background-image</span><span class="s1">: </span><span class="s0">url</span><span class="s1">(</span><span class="s6">&quot;image4.jpg&quot;</span><span class="s1">)</span><span class="s4">; </span><span class="s1">}</span>
+      <span class="s0">50% </span><span class="s1">{ </span><span class="s2">background-image</span><span class="s1">: </span><span class="s0">url</span><span class="s1">(</span><span class="s6">&quot;image3.gif&quot;</span><span class="s1">)</span><span class="s4">; </span><span class="s1">}</span>
+      <span class="s0">75% </span><span class="s1">{ </span><span class="s2">background-image</span><span class="s1">: </span><span class="s0">url</span><span class="s1">(</span><span class="s6">&quot;image5.gif&quot;</span><span class="s1">)</span><span class="s4">; </span><span class="s1">}</span>
+    <span class="s1">}</span>
+    <span class="s4">@keyframes </span><span class="s0">buttonClick </span><span class="s1">{</span>
+      <span class="s0">0% </span><span class="s1">{ </span><span class="s2">transform</span><span class="s1">: </span><span class="s0">scale</span><span class="s1">(</span><span class="s5">1</span><span class="s1">)</span><span class="s4">; </span><span class="s1">}</span>
+      <span class="s0">50% </span><span class="s1">{ </span><span class="s2">transform</span><span class="s1">: </span><span class="s0">scale</span><span class="s1">(</span><span class="s5">0.9</span><span class="s1">)</span><span class="s4">; </span><span class="s1">}</span>
+      <span class="s0">100% </span><span class="s1">{ </span><span class="s2">transform</span><span class="s1">: </span><span class="s0">scale</span><span class="s1">(</span><span class="s5">1</span><span class="s1">)</span><span class="s4">; </span><span class="s1">}</span>
+    <span class="s1">}</span>
+  <span class="s0">&lt;/style&gt;</span>
+<span class="s0">&lt;/head&gt;</span>
+<span class="s0">&lt;body&gt;</span>
+<span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;background-overlay&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+<span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;loading-overlay&quot;</span><span class="s0">&gt;</span>
+  <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;loading-spinner&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+  <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;loading-text&quot;</span><span class="s0">&gt;</span><span class="s1">Loading...</span><span class="s0">&lt;/div&gt;</span>
+  <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;loading-subtext&quot;</span><span class="s0">&gt;</span><span class="s1">猜數字</span><span class="s0">&lt;/div&gt;</span>
+<span class="s0">&lt;/div&gt;</span>
+
+<span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;play-button&quot; </span><span class="s2">onclick</span><span class="s3">=&quot;</span><span class="s1">startLoading()</span><span class="s3">&quot;</span><span class="s0">&gt;</span><span class="s1">Play Game</span><span class="s0">&lt;/div&gt;</span>
+
+<span class="s0">&lt;script&gt;</span>
+  <span class="s4">function </span><span class="s1">startLoading() {</span>
+    <span class="s4">var </span><span class="s1">loadingOverlay = document.querySelector(</span><span class="s6">'.loading-overlay'</span><span class="s1">)</span><span class="s4">;</span>
+    <span class="s4">var </span><span class="s1">playButton = document.querySelector(</span><span class="s6">'.play-button'</span><span class="s1">)</span><span class="s4">;</span>
+    <span class="s4">var </span><span class="s1">backgroundOverlay = document.querySelector(</span><span class="s6">'.background-overlay'</span><span class="s1">)</span><span class="s4">;</span>
+
+    <span class="s1">playButton.classList.add(</span><span class="s6">'clicked'</span><span class="s1">)</span><span class="s4">; </span><span class="s7">// 添加点击动画类</span>
+
+    <span class="s1">setTimeout(</span><span class="s4">function</span><span class="s1">() {</span>
+      <span class="s1">playButton.style.display = </span><span class="s6">'none'</span><span class="s4">;</span>
+      <span class="s1">loadingOverlay.style.display = </span><span class="s6">'flex'</span><span class="s4">;</span>
+      <span class="s1">backgroundOverlay.style.backgroundColor = </span><span class="s6">'black'</span><span class="s4">; </span><span class="s7">// 设置背景颜色为黑色</span>
+
+      <span class="s1">setTimeout(</span><span class="s4">function</span><span class="s1">() {</span>
+        <span class="s1">document.querySelector(</span><span class="s6">'.loading-overlay'</span><span class="s1">).style.display = </span><span class="s6">'none'</span><span class="s4">;</span>
+        <span class="s1">document.body.style.overflow = </span><span class="s6">'auto'</span><span class="s4">;</span>
+        <span class="s1">jumpToGame()</span><span class="s4">;</span>
+      <span class="s1">}</span><span class="s4">, </span><span class="s5">3000</span><span class="s1">)</span><span class="s4">;</span>
+    <span class="s1">}</span><span class="s4">, </span><span class="s5">300</span><span class="s1">)</span><span class="s4">; </span><span class="s7">// 等待点击动画完成后开始加载</span>
+  <span class="s1">}</span>
+  <span class="s4">function </span><span class="s1">jumpToGame() {</span>
+    <span class="s4">var </span><span class="s1">gameUrl = </span><span class="s6">&quot;http://localhost:63342/Web/math.html?_ijt=c0v6s0tarigh9b1r5r0fibd6bm&amp;_ij_reload=RELOAD_ON_SAVE&quot;</span><span class="s4">;</span>
+    <span class="s1">window.location.href = gameUrl</span><span class="s4">;</span>
+  <span class="s1">}</span>
+<span class="s0">&lt;/script&gt;</span>
+<span class="s0">&lt;/body&gt;</span>
+<span class="s0">&lt;/html&gt;</span></pre>
+</body>
+</html>
